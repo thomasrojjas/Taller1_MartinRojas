@@ -6,7 +6,7 @@ Usuarios::Usuarios() {
     cantidad = 0;
 
     //dejamos todos los punteros del arreglo en 0
-    for (int i = 0; i < MAX; i++) {
+    for (int i = 0; i < max; i++) {
         arreglo[i] = 0;
     }
 }
@@ -35,7 +35,7 @@ Usuario* Usuarios::getAt(int indice) const {
 
 int Usuarios::buscarPorUsername(const std::string& username) const {
 
-    //recorremos desde 0 hasta el max-1
+    //recorremos desde 0 hasta el max
     for (int i = 0; i < cantidad; i++) {
         if (arreglo[i]->getUsername() == username) {
             return i;  //si se encuentra se retorna
@@ -63,7 +63,7 @@ bool Usuarios::agregarUsuario(Usuario* usuarioNuevo) {
     }
 
     //caso de que este lleno
-    if (cantidad >= MAX) {
+    if (cantidad >= max) {
         return false;
     }
 

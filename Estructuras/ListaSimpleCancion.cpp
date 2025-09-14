@@ -19,12 +19,12 @@ void ListaSimpleCancion::push_back(const Canciones& c) {
         nodoNuevo->siguiente = 0;
 
         if (cabeza == 0) {
-            // lista vacía: cabeza y cola apuntan al nuevo
+            //lista vacia cabeza y cola apuntan al nuevo
             cabeza = nodoNuevo;
             cola   = nodoNuevo;
         }
         else {
-            // agregar al final
+            //agregar al final
             cola->siguiente = nodoNuevo;
             cola = nodoNuevo;
         }
@@ -38,13 +38,13 @@ bool ListaSimpleCancion::removeAt(int indice) {
             return false;
         }
 
-        // eliminar el primero
+        //eliminar el primero
         if (indice == 0) {
             NodoCancion* nodoAEliminar = cabeza;
             cabeza = cabeza->siguiente;
 
             if (cola == nodoAEliminar) {
-                // si solo había un elemento, cola también cambia
+                //si solo habia un elemento la cola tambien cambia
                 cola = cabeza;
             }
 
@@ -55,17 +55,17 @@ bool ListaSimpleCancion::removeAt(int indice) {
             return true;
         }
 
-        // buscar el nodo anterior al que queremos borrar
+        //buscar el nodo anterior al que queremos borrar
         NodoCancion* anterior = cabeza;
         for (int i = 0; i < indice - 1; i++) {
             anterior = anterior->siguiente;
         }
 
-        NodoCancion* objetivo = anterior->siguiente;         // el que vamos a borrar
-        anterior->siguiente = objetivo->siguiente;         // “saltamos” el objetivo
+        NodoCancion* objetivo = anterior->siguiente;  //el que vamos a borrar
+        anterior->siguiente = objetivo->siguiente;  //saltamos el objetivo
 
         if (objetivo == cola) {
-            cola = anterior;                                  // si borramos el último, movemos la cola
+            cola = anterior;  // si borramos el último, movemos la cola
         }
 
         delete objetivo->data;
@@ -86,7 +86,7 @@ bool ListaSimpleCancion::getAt(int indice, Canciones& cancion) const {
         cursor = cursor->siguiente;
     }
 
-    cancion = *(cursor->data);    // copiamos el contenido al parámetro de salida
+    cancion = *(cursor->data);  // copiamos el contenido al parametro de salida
     return true;
 }
 
@@ -101,8 +101,8 @@ void ListaSimpleCancion::clear() {
     while (actual != 0) {
         NodoCancion* siguiente = actual->siguiente;
 
-        delete actual->data;      // liberar canción en heap
-        delete actual;            // liberar nodo
+        delete actual->data;
+        delete actual;
 
         actual = siguiente;
     }
@@ -115,16 +115,16 @@ void ListaSimpleCancion::clear() {
 int ListaSimpleCancion::buscarPorNombreArtista(const std::string& nombre, const std::string& artista) const {
 
     NodoCancion* cursor     = cabeza;
-    int          indiceAux  = 0;
+    int indiceAux  = 0;
 
     while (cursor != 0) {
         if (cursor->data->getNombre() == nombre && cursor->data->getArtista() == artista) {
-            return indiceAux;     // encontrado
+            return indiceAux;  // encontrado
         }
 
-        cursor    = cursor->siguiente;
+        cursor = cursor->siguiente;
         indiceAux = indiceAux + 1;
     }
 
-    return -1;                     // no encontrado
+    return -1;  // no encontrado
 }

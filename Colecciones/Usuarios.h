@@ -6,8 +6,8 @@
 class Usuarios {
 
     private:
-    static const int MAX = 10;   // capacidad fija (cámbialo si quieres)
-    Usuario* arreglo[MAX];
+    static const int max = 10;
+    Usuario* arreglo[max];
     int cantidad;
 
     public:
@@ -17,7 +17,7 @@ class Usuarios {
     int size() const;
     Usuario* getAt(int indice) const;
 
-    bool agregarUsuario(Usuario* usuarioNuevo);  // falla si está lleno o si username ya existe
+    bool agregarUsuario(Usuario* usuarioNuevo);
     int  buscarPorUsername(const std::string& username) const;
     int  buscarPorEmail(const std::string& email) const;
     int  autenticar(const std::string& username, const std::string& password) const;
