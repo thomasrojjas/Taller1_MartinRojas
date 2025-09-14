@@ -35,7 +35,7 @@ Usuario* Usuarios::getAt(int indice) const {
 
 int Usuarios::buscarPorUsername(const std::string& username) const {
 
-    //recorremos desde 0 hasta el max-1
+    //recorremos desde 0 hasta el max
     for (int i = 0; i < cantidad; i++) {
         if (arreglo[i]->getUsername() == username) {
             return i;  //si se encuentra se retorna
