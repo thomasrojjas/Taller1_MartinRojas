@@ -393,13 +393,13 @@ void menuPlaylist(Playlist* pl, Usuarios& sistema) {
 
 void menuUsuario(Usuario* u, Usuarios& sistema) {
     while (true) {
-        std::cout << "--- USUARIO: " << u->getUsername() << " ---";
-        std::cout << "1) listar playlists";
-        std::cout << "2) crear playlist";
-        std::cout << "3) renombrar playlist";
-        std::cout << "4) eliminar playlist";
-        std::cout << "5) entrar a una playlist";
-        std::cout << "0) cerrar sesion y volver al menu principal";
+        std::cout << "\n--- USUARIO: " << u->getUsername() << " ---\n";
+        std::cout << "1) listar playlists\n";
+        std::cout << "2) crear playlist\n";
+        std::cout << "3) renombrar playlist\n";
+        std::cout << "4) eliminar playlist\n";
+        std::cout << "5) entrar a una playlist\n";
+        std::cout << "0) cerrar sesion y volver al menu principal\n";
         std::cout << "opcion: ";
 
         int op;
@@ -573,10 +573,10 @@ int main() {
     lecturaArchivoUsuariosTXT(sistema); // si no existe, sigue igual
 
     while (true) {
-        std::cout << "--- MENU PRINCIPAL ---";
-        std::cout << "1) iniciar sesion";
-        std::cout << "2) registrarse";
-        std::cout << "0) cerrar el programa";
+        std::cout << "\n--- MENU PRINCIPAL ---\n";
+        std::cout << "1) iniciar sesion\n";
+        std::cout << "2) registrarse\n";
+        std::cout << "0) cerrar el programa\n";
         std::cout << "opcion: ";
 
         int op;
